@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav_links">
+                <li><a href="kazakh.html">Kazakh-English</a></li>
+                <li><a href="index.html">English-Kazakh</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container">
+        <form>
+            <i class="fas fa-search"></i>
+            <input type="text" name="" id="search-item" placeholder="Type the word here..." onkeyup="search()">
+        </form>
+        <div class="category-buttons">
+            <button onclick="showCategory('courage')">Батылдық және тәуекел</button>
+            <button onclick="showCategory('time')">Уақыт</button>
+            <button onclick="showCategory('homeland')">Отан,туған жер,үй,ағайын-туысқан</button>
+            <button onclick="showCategory('education')">Білім,өнер,еңбек</button>
+            <button class="hidden" onclick="showCategory('justice')">Әділдік</button>
+            <button class="hidden" onclick="showCategory('health')">Денсаулық</button>
+            <button class="hidden" onclick="showCategory('satisfaction')">Қанағат</button>
+            <button class="hidden" onclick="showCategory('unity')">Бірлік</button>
+            <button class="hidden" onclick="showCategory('habits')">Әдеттер</button>
+            <button class="hidden" onclick="showCategory('kindness')">Жақсылық, үміт, қателесу</button>
+            <button class="hidden" onclick="showCategory('foolishness')">Ақымақтық</button>
+            <button class="hidden" onclick="showCategory('words')">Сөздер, махаббат, сұлулық</button>
+            <!-- Повторять для остальных категорий -->
+
+            <button id="show-all-categories" onclick="showAllCategories()">Барлығы</button>
+        </div>
+        <div class="product-list" id="product-list">
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Тәуекелсіз іс бітпейді,тәуекел етпеген арықтан өтпейді</h3>
+                    <div class="result">
+                        <p>/Täuekelsız ıs bıtpeidı,täuekel etpegen aryqtan ötpeidı/</p>
+                        <p class="final">Nothing ventured,nothing gained </p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Көз қорқақ қол батыр</h3>
+                    <div class="result">
+                        <p>/Köz qorqaq qol batyr/</p>
+                        <p class="final">It takes courage to start</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Батыр өлсе аты қалады,қорқақ өлсе не қалады?</h3>
+                    <div class="result">
+                        <p>/Batyr ölse aty qalady,qorqaq ölse ne qalady?/</p>
+                        <p class="final">None but the brave deserve the fair </p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Тәуекел тау жығады</h3>
+                    <div class="result">
+                        <p>/Täuekel tau jyğady/</p>
+                        <p>Courage overcomes all obstacles</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Ер жігітке екі өлмек жоқ</h3>
+                    <div class="result">
+                        <p>/Er jıgıtke ekı ölmek joq/</p>
+                        <p class="final">A man can die but once</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Салың суға кетпесін</h3>
+                    <div class="result">
+                        <p>/Salyñ suğa ketpesın/</p>
+                        <p class="final">Never say die</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Шешінген судан тайынбас</h3>
+                    <div class="result">
+                        <p>/Şeşıngen sudan taiynbas/</p>
+                        <p class="final">Neck or nothing</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Ер жігіттің екі сөйлегені өлгені</h3>
+                    <div class="result">
+                        <p>/Er jıgıttıñ ekı söilegenı ölgenı/</p>
+                        <p class="final">Promise is a debt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Жеті рет өлшеп, бір рет кес</h3>
+                    <div class="result">
+                        <p>/Jetı ret ölşep, bır ret kes/</p>
+                        <p class="final">Look before you leap</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="courage">
+                <div class="p-details">
+                    <h3>Темірді қызған кезде соқ</h3>
+                    <div class="result">
+                        <p>/Temırdı qyzğan kezde soq/</p>
+                        <p class="final">Strike while the iron is hot</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Өз үйім өлең төсегім</h3>
+                    <div class="result">
+                        <p>/Öz üiım öleñ tösegım/</p>
+                        <p>There is no place like home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Ел-елдің бәрі жақсы,Өз елің бәрінен жақсы</h3>
+                    <div class="result">
+                        <p>/El-eldıñ bärı jaqsy,Öz elıñ bärınen jaqsy/</p>
+                        <p>East or west home is best</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Өз үйім кең сарайдай боз үйім</h3>
+                    <div class="result">
+                        <p>/Öz üiım keñ saraidai boz üiım/</p>
+                        <p>An englishman's home is his castle</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Әр елдің салты басқа, иттері қара қасқа</h3>
+                    <div class="result">
+                        <p>/Är eldıñ salty basqa, itterı qara qasqa/</p>
+                        <p>Every country has its customs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Әкеге қарап ұл өсер</h3>
+                    <div class="result">
+                        <p>/Äkege qarap ūl öser/</p>
+                        <p>Like father, like son.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Ел құлағы елу</h3>
+                    <div class="result">
+                        <p>/El qūlağy elu/</p>
+                        <p>The country has fifty ears</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Жақсыдан жаман туса да, тартпай қоймас негізге</h3>
+                    <div class="result">
+                        <p>/Jaqsydan jaman tusa da, tartpai qoimas negızge/</p>
+                        <p>Blood is thicker than water</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Ұяда не көрсең,ұшқанда соны ілесін</h3>
+                    <div class="result">
+                        <p>/Ūiada ne körseñ,ūşqanda sony ılesın/</p>
+                        <p>Charity begins at home</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Өз елінде көртышқан да батыр</h3>
+                    <div class="result">
+                        <p>/Öz elınde körtyşqan da batyr/</p>
+                        <p>A cock is valiant on his own dunghill.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Тура биде туған жоқ; туғанды биде иман жоқ</h3>
+                    <div class="result">
+                        <p>/Tura bide tuğan joq; tuğandy bide iman joq/</p>
+                        <p>The honest judge has no relatives; the judge with relatives has no honesty</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="homeland">
+                <div class="p-details">
+                    <h3>Жалғыз ағаш үй болмас, жалғыз жігіт би болмас</h3>
+                    <div class="result">
+                        <p>/Jalğyz ağaş üi bolmas, jalğyz jıgıt bi bolmas/</p>
+                        <p>A single wood cannot be a house, a single man cannot be a judge</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Үйрен де жирен</h3>
+                    <div class="result">
+                        <p>/Üiren de jiren/</p>
+                        <p>Live and learn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Өнерлігі өлім жоқ</h3>
+                    <div class="result">
+                        <p>/Önerlıgı ölım joq/</p>
+                        <p>Art is long, life is short</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Әдемі көрінгенше, ақылды көрін</h3>
+                    <div class="result">
+                        <p>/Ädemı körıngenşe,aqyldy körın/</p>
+                        <p>Wear the old coat and buy the new book</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Білекті бірді жығады, білімді мыңды жығады</h3>
+                    <div class="result">
+                        <p>/Bılektı bırdı jyğady,bılımdı myñdy jyğady/</p>
+                        <p>Knowledge is power</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Оқу инемен құдық қазғандай</h3>
+                    <div class="result">
+                        <p>/Oqu inemen qūdyq qazğandai/</p>
+                        <p>There is no royal road to learning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Қайталау-білім анасы</h3>
+                    <div class="result">
+                        <p>/Qaitalau-bılım anasy/</p>
+                        <p>Practice Makes Perfect</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Нағыз ұстаны төс соғуыннан танисың</h3>
+                    <div class="result">
+                        <p>/Nağyz ūstany tös soğuynnan tanisyñ/</p>
+                        <p>A bird may be known by its song</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Жаман етікші біз таңдайды</h3>
+                    <div class="result">
+                        <p>/Jaman etıkşı bız tañdaidy/</p>
+                        <p>A bad workman quarrels with his tools</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Шығысы шықпай кірісі кірмейді</h3>
+                    <div class="result">
+                        <p>/Şyğysy şyqpai kırısı kırmeidı/</p>
+                        <p>You can't make an omelet without breaking eggs</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Көктемде жерге түскен бір дән-күзде мың дән болады</h3>
+                    <div class="result">
+                        <p>/Köktemde jerge tüsken bır dän-küzde myñ dän bolady/</p>
+                        <p>A day feeds a year</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Еңбек етсең емерсің</h3>
+                    <div class="result">
+                        <p>/Eñbek etseñ emersıñ/</p>
+                        <p>Hard work pays off</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Кісіні сөзіне қарап емес,ісіне қарап бағала</h3>
+                    <div class="result">
+                        <p>/Kısını sözıne qarap emes,ısıne qarap bağala/</p>
+                        <p>Actions speak louder than words</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Сөз қанжардан да өткір</h3>
+                    <div class="result">
+                        <p>/Söz qanjardan da ötkır/</p>
+                        <p>Words cut more than swords</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Айтуға оңай,істеуге қиын</h3>
+                    <div class="result">
+                        <p>/Aituğa oñai,ısteuge qiyn/</p>
+                        <p>Easier to said than done</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Аз сөз-алтын</h3>
+                    <div class="result">
+                        <p>/Az söz-altyn/</p>
+                        <p>Silence is golden</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Көңілсіз жұмыс өнімсіз</h3>
+                    <div class="result">
+                        <p>/Köñılsız jūmys önımsız/</p>
+                        <p>What we do willingly is easy</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Таяқ еттен өтеді, сөз сүйектен өтеді</h3>
+                    <div class="result">
+                        <p>/Taiaq etten ötedı,söz süiekten ötedı/</p>
+                        <p>Hard words break no bones</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Еңбек түбі береке</h3>
+                    <div class="result">
+                        <p>/Eñbek tübı bereke/</p>
+                        <p>The end crowns the work</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Екі қоянды бір оқпен ату</h3>
+                    <div class="result">
+                        <p>/Ekı qoiandy bır oqpen atu/</p>
+                        <p>To kill two birds with one stone.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Таудай талап бергенше, бармақтай бақ бер</h3>
+                    <div class="result">
+                        <p>/Taudai talap bergenşe, barmaqtai baq ber/</p>
+                        <p>Better be born lucky than rich</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Іздеген мұратына жетеді</h3>
+                    <div class="result">
+                        <p>/Izdegen mūratyna jetedı/</p>
+                        <p>Where there is a will there is way</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Бүгін бітер істі ертеңге қалдырма</h3>
+                    <div class="result">
+                        <p>/Bügın bıter ıstı erteñge qaldyrma/</p>
+                        <p>Never put off till tomorrow what you can do today</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Әрекет болмай, берекет болмас</h3>
+                    <div class="result">
+                        <p>/Äreket bolmai, bereket bolmas/</p>
+                        <p>Nothing venture, nothing have</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Бейнетсіз зейнет жоқ</h3>
+                    <div class="result">
+                        <p>/Beinetsız zeinet joq/</p>
+                        <p>No gain without pain</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Еңбекпен ер көгерер</h3>
+                    <div class="result">
+                        <p>/Eñbekpen er kögerer/</p>
+                        <p>No grass grows on his heel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Оқу инемен құдық қазғандай</h3>
+                    <div class="result">
+                        <p>/Oqu inemen qūdyq qazğandai /</p>
+                        <p>There is no royal road to learning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Оқы, оқы және оқы</h3>
+                    <div class="result">
+                        <p>/Oqy, oqy jäne oqy/</p>
+                        <p>Live and learn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Көп жасағаннан сұрама, көп көргеннен сұра</h3>
+                    <div class="result">
+                        <p>/Köp jasağannan sūrama, köp körgennen sūra/</p>
+                        <p>Experience is the mother of wisdom</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="education">
+                <div class="p-details">
+                    <h3>Ерте тұрған еркектін ырыс артық,ерте тұрған әйелдің бір ісі артық</h3>
+                    <div class="result">
+                        <p>/Erte tūrğan erkektın yrys artyq,erte tūrğan äieldıñ bır ısı artyq/</p>
+                        <p>Early to bed, early to rise, makes a man healthy, wealthy, and wise.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Не ексең,соны орасың</h3>
+                    <div class="result">
+                        <p>/Ne ekseñ,sony orasyñ/</p>
+                        <p>People get what they deserve</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Жылтырағанның бәрі алтын емес</h3>
+                    <div class="result">
+                        <p>/Jyltyrağannyñ bärı altyn emes/</p>
+                        <p>All that glitters is not gold</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Қарға қарғаның көзін шұқымайды</h3>
+                    <div class="result">
+                        <p>/Qarğa qarğanyñ közın şūqymaidy/</p>
+                        <p>Hawk will not pick out hawk's eyes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Желмен келген,желмен кетеді</h3>
+                    <div class="result">
+                        <p>/Jelmen kelgen,jelmen ketedı/</p>
+                        <p>Easy come, easy go</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Басқаларға ор қазба,өзің түсесің</h3>
+                    <div class="result">
+                        <p>/Basqalarğa or qazba,özıñ tüsesıñ/</p>
+                        <p>Actions can boomerang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Су ішкен құдығыңа түкірме</h3>
+                    <div class="result">
+                        <p>/Su ışken qūdyğyña tükırme/</p>
+                        <p>Never cast dirt into that fountain of which you have sometime drunk</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Ұры өле-өлгенше ақпын дейді</h3>
+                    <div class="result">
+                        <p>/Ūry öle-ölgenşe aqpyn deidı/</p>
+                        <p>Innocent till proven guilty</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Жаудың жағымпаздығынан гөрі ащы шындық жақсы</h3>
+                    <div class="result">
+                        <p>/Jaudyñ jağympazdyğynan görı aşşy şyndyq jaqsy/</p>
+                        <p>Nothing hurts more than truth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Соңғы күлген күледі</h3>
+                    <div class="result">
+                        <p>/Soñğy külgen küledı/</p>
+                        <p>He laughs best who laughs last</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Өлімнің алдында бәрі тең</h3>
+                    <div class="result">
+                        <p>/Ölımnıñ aldynda bärı teñ/</p>
+                        <p>Death is the great leveller</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Не ексең, соны орасың</h3>
+                    <div class="result">
+                        <p>/Ne ekseñ ,sony orasyñ/</p>
+                        <p>As a man sows, so shall he reap</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Екі жаман қосылса,өлгенінше қос болады</h3>
+                    <div class="result">
+                        <p>/Ekı jaman qosylsa,ölgenınşe qos bolady/</p>
+                        <p>Two wrongs do not make a right</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Бай бауырын танымас, сауда досқа қарамас</h3>
+                    <div class="result">
+                        <p>/Bai bauyryn tanymas,sauda dosqa qaramas/</p>
+                        <p>One law for the rich and another for the poor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Мал жаным садағасы; жан арым садағасы</h3>
+                    <div class="result">
+                        <p>/Mal janym sadağasy; jan arym sadağasy/</p>
+                        <p>The cattle is the charity for my soul; my soul is the charity for my honor</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Жел тұрмаса шөптің басы қимылдамайды</h3>
+                    <div class="result">
+                        <p>/Jel tūrmasa şöptıñ basy qimyldamaidy/</p>
+                        <p>There is reason in all things</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Біреуге ор қазба, өзің түсерсің</h3>
+                    <div class="result">
+                        <p>/Bıreuge or qazba, özıñ tüsersıñ/</p>
+                        <p>Curses like chickens come home to roost</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Бес саусақ бірдей емес</h3>
+                    <div class="result">
+                        <p>/Bes sausaq bırdei emes/</p>
+                        <p>All bread is not baked in one oven</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="justice">
+                <div class="p-details">
+                    <h3>Естігенге емес, көргенге сен</h3>
+                    <div class="result">
+                        <p>/Estıgenge emes, körgenge sen/</p>
+                        <p>Seeing is believing</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="product" data-category="health">
+                <div class="p-details">
+                    <h3>Денсаулық зор байлық</h3>
+                    <div class="result">
+                        <p>/Densaulyq zor bailyq/</p>
+                        <p>Good health is above wealth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="health">
+                <div class="p-details">
+                    <h3>Ауырып ем іздегенше,ауырмайтын жол ізде</h3>
+                    <div class="result">
+                        <p>/Auyryp em ızdegenşe, auyrmaityn jol ızde/</p>
+                        <p>An ounce of prevention is worth a pound of cure</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="health">
+                <div class="p-details">
+                    <h3>Тазалық-денсаулық кепілі</h3>
+                    <div class="result">
+                        <p>/Tazalyq-densaulyq kepılı/</p>
+                        <p>Cleanliness is next to godliness</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="health">
+                <div class="p-details">
+                    <h3>Жан-жарасына уақыт емші</h3>
+                    <div class="result">
+                        <p>/Jan-jarasyna uaqyt emşı/</p>
+                        <p>Time is a great healer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Екі кеменің басын ұстаға суға кетеді</h3>
+                    <div class="result">
+                        <p>/Ekı kemenıñ basyn ūstağa suğa ketedı/</p>
+                        <p>If you run after two hares you will catch neither—between two stools one falls to the ground</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Аспандағы сұңқардан қолдағы тұрымтай артық</h3>
+                    <div class="result">
+                        <p>/Aspandağy sūñqardan qoldağy tūrymtai artyq/</p>
+                        <p>A bird in the hand is worth two in the bush.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Әр нәрсеге асық болғанша,бір нәрсеге машық бол</h3>
+                    <div class="result">
+                        <p>/Är närsege asyq bolğanşa,bır närsege maşyq bol/</p>
+                        <p>You cannot run with the hare and hunt with the hounds</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Сыйлаған аттың тісін ашпас болар</h3>
+                    <div class="result">
+                        <p>/Syilağan attyñ tısın aşpas bolar/</p>
+                        <p>Don't look a gift horse in the mouth.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Ештен кеш жақсы</h3>
+                    <div class="result">
+                        <p>/Eşten keş jaqsy/</p>
+                        <p>Better late than never.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Қайтқан малда қайыр бар</h3>
+                    <div class="result">
+                        <p>/Qaitqan malda qaiyr bar/</p>
+                        <p>One good turn deserves another</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Қарны ашқанға қара талқан майдай  көрінеді</h3>
+                    <div class="result">
+                        <p>/Qarny aşqanğa qara talqan maidai  körınedı/</p>
+                        <p>Hunger is the best sauce</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                    <h3>Берген қол алған қолдан жақсы</h3>
+                    <div class="result">
+                        <p>/Bergen qol alğan qoldan jaqsy/</p>
+                        <p>It is better to give than to take</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="satisfaction">
+                <div class="p-details">
+                <h3>Адам көркі-шүперек</h3>
+                <div class="result">
+                    <p>/Adam körkı-şüperek/</p>
+                    <p>Clothes make the man</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="satisfaction">
+            <div class="p-details">
+                <h3>Жоқтық ұят емес, байлық мұрат емес</h3>
+                <div class="result">
+                    <p>/Joqtyq ūiat emes, bailyq mūrat emes/</p>
+                    <p>Poverty is not a shame, wealth is not an ideal</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Көп көтерген жүк жеңіл</h3>
+                <div class="result">
+                    <p>/Köp kötergen jük jeñıl/</p>
+                    <p>A problem shared is a problem halved</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Көптің қолы ұзын</h3>
+                <div class="result">
+                    <p>/Köptıñ qoly ūzyn/</p>
+                    <p>Union is strength</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Көп түкірсе көл болар</h3>
+                <div class="result">
+                    <p>/Köp tükırse köl bolar/</p>
+                    <p>Little strokes fell great oaks</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Балық басынан шіриді</h3>
+                <div class="result">
+                    <p>/Balyq basynan şıridı/</p>
+                    <p>Fish begins to stink at the head</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Достың ескісі,тонның жаңасы жақсы</h3>
+                <div class="result">
+                    <p>/Dostyñ eskısı,tonnyñ jañasy jaqsy/</p>
+                    <p>Old friend and old wine are the best</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Жақсы адам жолдасынан белгілі</h3>
+                <div class="result">
+                    <p>/Jaqsy adam joldasynan belgılı/</p>
+                    <p>A man is known by the company he keeps</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Жүз теңген болғанша,жүз досың болсын</h3>
+                <div class="result">
+                    <p>/Jüz teñgen bolğanşa,jüz dosyñ bolsyn/</p>
+                    <p>A friend in court is better than a penny in purse</p>
+                </div>
+            </div>
+        </div>
+        <div class="product" data-category="unity">
+            <div class="p-details">
+                <h3>Жалғыздың үні шықпас, жаяудың шаңы шықпас</h3>
+                <div class="result">
+                    <p>/Jalğyzdyñ ünı şyqpas, jaiaudyñ şañy şyqpas/</p>
+                    <p>One man does not make a team</p>
+                </div>
+            </div>
+        </div>
+
+            <div class="product" data-category="habits">
+                <div class="p-details">
+                    <h3>Ауру кетсе де,әдет кетпейді</h3>
+                    <div class="result">
+                        <p>/Auru ketse de,ädet ketpeidı/</p>
+                        <p>Once a priest, always a priest.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="habits">
+                <div class="p-details">
+                    <h3>Ит иттігін қылмай қоймас</h3>
+                    <div class="result">
+                        <p>/İt ittıgın qylmai qoimas/</p>
+                        <p>An old dog will learn no new tricks.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="habits">
+                <div class="p-details">
+                    <h3>Талғамға талас жоқ</h3>
+                    <div class="result">
+                        <p>/Talğamğa talas joq/</p>
+                        <p>Tastes differ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="habits">
+                <div class="p-details">
+                    <h3>Қанша адам болса, сонша ой, сонша пікір</h3>
+                    <div class="result">
+                        <p>/Qanşa adam bolsa, sonşa oi, sonşa pıkır/</p>
+                        <p>So many men, so many minds.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="habits">
+                <div class="p-details">
+                    <h3>Жақсы ит иесінің көз-құлағы</h3>
+                    <div class="result">
+                        <p>/Jaqsy it iesınıñ köz-qūlağy/</p>
+                        <p>A man's best friend is his dog.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product" data-category="kindness">
+                <div class="p-details">
+                    <h3>Түн артынан күн келер</h3>
+                    <div class="result">
+                        <p>/Tün artynan kün keler/</p>
+                        <p>Nights bring counsel.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="kindness">
+                <div class="p-details">
+                    <h3>Бұқараға туған күн,бұзауға да туады</h3>
+                    <div class="result">
+                        <p>/Būqarağa tuğan kün,būzauğa da tuady/</p>
+                        <p>Every dog has his day.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="kindness">
+                <div class="p-details">
+                    <h3>Бір құмалақ бір қарын майды шірітеді</h3>
+                    <div class="result">
+                        <p>/Bır qūmalaq bır qaryn maidy şırıtedı/</p>
+                        <p>The rotten apple injures its neighbours.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="kindness">
+                <div class="p-details">
+                    <h3>Адам қатесіз болмас,көл бақасыз болмас</h3>
+                    <div class="result">
+                        <p>/Adam qatesız bolmas,köl baqasyz bolmas/</p>
+                        <p>Even an experienced person can make mistakes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Жаңалықтың жоқтығы да жақсы жаңалық</h3>
+                    <div class="result">
+                        <p>/Jañalyqtyñ joqtyğy da jaqsy jañalyq/</p>
+                        <p>No news is good news.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Сабапқы ине сәтімен</h3>
+                    <div class="result">
+                        <p>/Sabapqy ine sätımen/</p>
+                        <p>There is a time for everything.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Бүгін бітер істі ертеңге қалдырма</h3>
+                    <div class="result">
+                        <p>/Bügın bıter ıstı erteñge qaldyrma/</p>
+                        <p>Don't put off until tomorrow what you can do today.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Сабыр түбі сары алтын</h3>
+                    <div class="result">
+                        <p>/Sabyr tübı sary altyn/</p>
+                        <p>Patience is a virtue.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Асықпаған арбамен қоян алар</h3>
+                    <div class="result">
+                        <p>/Asyqpağan arbamen qoian alar/</p>
+                        <p>Everything comes to him who knows how to wait.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Тамшы тама берсе,тас жарады</h3>
+                    <div class="result">
+                        <p>/Tamşy tama berse,tas jarady/</p>
+                        <p>Constant dropping wears away a stone.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Істің басы байлы болса аяғы сайлы болады</h3>
+                    <div class="result">
+                        <p>/Istıñ basy baily bolsa aiağy saily bolady/</p>
+                        <p>Good beginning makes good ending.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div class="p-details">
+                    <h3>Көш жүре түзеледі</h3>
+                    <div class="result">
+                        <p>/Köş jüre tüzeledı/</p>
+                        <p>Practice makes perfect.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="time">
+                <div the="p-details">
+                    <h3>Ештен кеш жақсы</h3>
+                    <div class="result">
+                        <p>/Eşten keş jaqsy/</p>
+                        <p>Better late than never.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-category="foolishness">
+                <div class="p-details">
+                    <h3>Ақымаққа арнап заң жазылмас</h3>
+                    <div class="result">
+                        <p>/Aqymaqqa arnap zañ jazylmasr/</p>
+                        <p>There is no law for fools.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="foolishness">
+                <div class="p-details">
+                    <h3>Сүтпен біткен мінез-сүйекпен кетеді</h3>
+                    <div class="result">
+                        <p>/Sütpen bıtken mınez-süiekpen ketedı/</p>
+                        <p>What is bred in the bone will come out in the flesh.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="foolishness">
+                <div class="p-details">
+                    <h3>Ақымақ жауынды күні суға түсер</h3>
+                    <div class="result">
+                        <p>/Aqymaq jauyndy künı suğa tüser/</p>
+                        <p>A fool wants his cloak in a rainy day.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Кісіне сөзіне қарап емес,ісіне қарап бағала</h3>
+                    <div class="result">
+                        <p>/Kısıne sözıne qarap emes,ısıne qarap bağala/</p>
+                        <p>Actions speak louder than words.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Сөз қанжардар да өткір</h3>
+                    <div class="result">
+                        <p>/Söz qanjardar da ötkır/</p>
+                        <p>Words cut more than swords.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Жаны сұлудың тәні сұлу</h3>
+                    <div class="result">
+                        <p>/Jany sūludyñ tänı sūlu/</p>
+                        <p>Handsome is as handsome does.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Айтуға оңай,істеуге қиын</h3>
+                    <div class="result">
+                        <p>/Aituğa oñai,ısteuge qiyn/</p>
+                        <p>Easier said than done.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Аз сөз алтын</h3>
+                    <div class="result">
+                        <p>/Az söz altyn/</p>
+                        <p>Brevity is the soul of wit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Ауызбен айтқанды, қолыңмен істе</h3>
+                    <div class="result">
+                        <p>/Auyzben aitqandy, qolyñmen ıste/</p>
+                        <p>Deeds, not words.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Үнсіздік-келісімнің белгісі</h3>
+                    <div class="result">
+                        <p>/Ünsızdık-kelısımnıñ belgısı/</p>
+                        <p>Silence gives consent.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Кімді айтса,сол келеді</h3>
+                    <div class="result">
+                        <p>/Kımdı aitsa,sol keledı/</p>
+                        <p>Talk of the devil and he is sure to appear.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Бос ыдыстан көп дыбыс шығады</h3>
+                    <div class="result">
+                        <p>/Bos ydystan köp dybys şyğady/</p>
+                        <p>The empty vessel makes the greatest sound.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Махаббат әлемді билейді</h3>
+                    <div class="result">
+                        <p>/Mahabbat älemdı bileidı/</p>
+                        <p>Love makes the world go round.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Жақсы әйел жаман ерін хан қылады</h3>
+                    <div class="result">
+                        <p>/Jaqsy äiel jaman erın han qyladyn/</p>
+                        <p>Behind every great man there's a great woman.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div the="p-details">
+                    <h3>Көзден кеткен көңілден кетеді</h3>
+                    <div class="result">
+                        <p>/Közden ketken köñılden ketedı/</p>
+                        <p>Out of sight, out of mind</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Сөз сүйектен, таяқ еттен өтеді</h3>
+                    <div class="result">
+                        <p>/Söz süiekten, taiaq etten ötedı/</p>
+                        <p>Many words hurt more than swords</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Жатқан жыланның құйрығын баспа</h3>
+                    <div class="result">
+                        <p>/Jatqan jylannyñ qūiryğyn baspa/</p>
+                        <p>Let sleeping dogs lie</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product" data-category="words">
+                <div class="p-details">
+                    <h3>Көрпеңе қарай көсіл</h3>
+                    <div class="result">
+                        <p>/Körpeñe qarai kösıl/</p>
+                        <p>Cut your coat according to your cloth</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <footer>
+        <div class="footer-copyright">
+            <p>Copyright @ 2022 All Rights Reserved.</p>
+            <p>Created by Satken Ayaulym and Muratbek Aliya </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    
+</body>
+</html>
